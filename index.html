@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unbound3D Firmware Installer</title>
-  <style>
-    body { 
-      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-      background: #0a0a0a; 
-      color: #fff; 
-      text-align: center; 
-      padding-top: 50px; 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1 { letter-spacing: 2px; font-weight: 300; }
-    p { color: #888; margin-bottom: 40px; max-width: 400px; line-height: 1.5; }
-    .installer-container {
-      background: #111;
-      padding: 40px;
-      border-radius: 8px;
-      border: 1px solid #222;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unbound3D Firmware Installer</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background: #0a0a0a; 
+            color: #fff; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #111;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #222;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        h1 { letter-spacing: 2px; font-weight: 300; margin-top: 0; }
+        p { color: #888; margin-bottom: 30px; font-size: 14px; }
+    </style>
 </head>
 <body>
 
-  <h1>UNBOUND3D INSTALLER</h1>
-  <p>Connect your ESP32 board via USB. Use <b>Google Chrome</b> or <b>Microsoft Edge</b> to flash the firmware.</p>
+    <div class="card">
+        <h1>UNBOUND3D</h1>
+        <p>Connect your board via USB and click Install.<br>
+        (Use Chrome or Edge only)</p>
 
-  <div class="installer-container">
-    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
-    
-    <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
-  </div>
+        <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+        
+        <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+    </div>
 
-  <div style="margin-top: 20px; font-size: 12px; color: #444;">
-    Firmware Version: 1.2.0
-  </div>
+    <div style="margin-top: 20px; color: #333; font-size: 11px;">Firmware v1.2.0</div>
 
 </body>
 </html>
