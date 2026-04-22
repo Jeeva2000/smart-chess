@@ -1,20 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unbound3D Firmware Installer</title>
   <style>
-    body { font-family: sans-serif; background: #0a0a0a; color: #fff; text-align: center; padding-top: 50px; }
-    h1 { letter-spacing: 2px; }
-    p { color: #888; margin-bottom: 40px; }
+    body { 
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+      background: #0a0a0a; 
+      color: #fff; 
+      text-align: center; 
+      padding-top: 50px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 { letter-spacing: 2px; font-weight: 300; }
+    p { color: #888; margin-bottom: 40px; max-width: 400px; line-height: 1.5; }
+    .installer-container {
+      background: #111;
+      padding: 40px;
+      border-radius: 8px;
+      border: 1px solid #222;
+    }
   </style>
 </head>
 <body>
 
   <h1>UNBOUND3D INSTALLER</h1>
-  <p>Connect your board via USB and click the button below.</p>
+  <p>Connect your ESP32 board via USB. Use <b>Google Chrome</b> or <b>Microsoft Edge</b> to flash the firmware.</p>
 
-  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
-  <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+  <div class="installer-container">
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+    
+    <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+  </div>
+
+  <div style="margin-top: 20px; font-size: 12px; color: #444;">
+    Firmware Version: 1.2.0
+  </div>
 
 </body>
 </html>
